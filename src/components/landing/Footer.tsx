@@ -38,8 +38,14 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold">Contact</h4>
             <ul className="mt-3 space-y-2 text-sm text-white/70">
-              <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-cyan-glow" /> hello@meitcyber.com</li>
-              <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-cyan-glow" /> +91 00000 00000</li>
+              <li className="flex items-center gap-2">
+                <Mail className="h-4 w-4 text-cyan-glow" />
+                <a href="mailto:Info@meitcybersolution.com" className="hover:text-white">Info@meitcybersolution.com</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="h-4 w-4 text-cyan-glow" />
+                <a href="tel:+916376509220" className="hover:text-white">+91 63765 09220</a>
+              </li>
             </ul>
           </div>
         </div>

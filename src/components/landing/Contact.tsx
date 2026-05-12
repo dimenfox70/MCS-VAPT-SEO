@@ -47,11 +47,11 @@ export function Contact() {
             <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
               <h3 className="text-lg font-semibold">VAPT — Direct contact</h3>
               <ul className="mt-4 space-y-3 text-sm">
-                <li><a href="tel:+910000000000" className="flex items-center gap-3 rounded-lg border border-border p-3 transition hover:bg-muted/50">
-                  <Phone className="h-4 w-4 text-primary" /> +91 00000 00000
+                <li><a href="tel:+916376509220" className="flex items-center gap-3 rounded-lg border border-border p-3 transition hover:bg-muted/50">
+                  <Phone className="h-4 w-4 text-primary" /> +91 63765 09220
                 </a></li>
-                <li><a href="mailto:hello@meitcyber.com" className="flex items-center gap-3 rounded-lg border border-border p-3 transition hover:bg-muted/50">
-                  <Mail className="h-4 w-4 text-primary" /> hello@meitcyber.com
+                <li><a href="mailto:Info@meitcybersolution.com" className="flex items-center gap-3 rounded-lg border border-border p-3 transition hover:bg-muted/50">
+                  <Mail className="h-4 w-4 text-primary" /> Info@meitcybersolution.com
                 </a></li>
                 <li><a href="#contact" className="flex items-center gap-3 rounded-lg border border-border p-3 transition hover:bg-muted/50">
                   <CalendarClock className="h-4 w-4 text-primary" /> Schedule online meeting
@@ -84,7 +84,7 @@ export function Contact() {
                     <FormItem><FormLabel>Email</FormLabel><FormControl><Input type="email" placeholder="you@company.com" {...field} /></FormControl><FormMessage /></FormItem>
                   )} />
                   <FormField name="phone" control={form.control} render={({ field }) => (
-                    <FormItem><FormLabel>Phone</FormLabel><FormControl><Input placeholder="+91 00000 00000" {...field} /></FormControl><FormMessage /></FormItem>
+                    <FormItem><FormLabel>Phone</FormLabel><FormControl><Input placeholder="+91 63765 09220" {...field} /></FormControl><FormMessage /></FormItem>
                   )} />
                   <FormField name="service" control={form.control} render={({ field }) => (
                     <FormItem>
