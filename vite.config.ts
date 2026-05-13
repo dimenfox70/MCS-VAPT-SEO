@@ -1,15 +1,28 @@
-// @lovable.dev/vite-tanstack-config already includes the following — do NOT add them manually
-// or the app will break with duplicate plugins:
-//   - tanstackStart, viteReact, tailwindcss, tsConfigPaths, cloudflare (build-only),
-//     componentTagger (dev-only), VITE_* env injection, @ path alias, React/TanStack dedupe,
-//     error logger plugins, and sandbox detection (port/host/strictPort).
-// You can pass additional config via defineConfig({ vite: { ... } }) if needed.
+// @lovable.dev/vite-tanstack-config bundles tanstackStart, viteReact, tailwindcss,
+// tsConfigPaths, env injection, dedupe, and dev-only HMR/component-tagger plugins.
+// We disable the optional Cloudflare integration so the SSR build targets Node
+// (Railway-compatible). `tanstackStart.server.entry = "server"` redirects the
+// bundled server entry to src/server.ts, which spins up the Node HTTP server.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-// @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
 export default defineConfig({
+  cloudflare: false,
   tanstackStart: {
     server: { entry: "server" },
+  },
+  vite: {
+    environments: {
+      // Force the SSR bundle to land at dist/server/index.js so that
+      // `node dist/server/index.js` (npm run start / Railway) just works.
+      ssr: {
+        build: {
+          rollupOptions: {
+            output: {
+              entryFileNames: "index.js",
+            },
+          },
+        },
+      },
+    },
   },
 });
