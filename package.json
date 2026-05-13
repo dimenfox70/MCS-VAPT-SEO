@@ -7,11 +7,10 @@
     "dev": "vite dev",
     "build": "vite build",
     "build:dev": "vite build --mode development",
-    "preview": "vite preview",
+    "preview": "vite preview",  
     "lint": "eslint .",
     "format": "prettier --write .",
-    "start": "serve -s dist/client -l 8080"
-  },
+    "start": "serve dist/client -l 8080 --single"  },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",
     "@hookform/resolvers": "^5.2.2",
